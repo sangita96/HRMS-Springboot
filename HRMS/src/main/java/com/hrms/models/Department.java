@@ -21,9 +21,9 @@ public class Department {
 	@Column(name="created_at")
 	private Timestamp createdAt;
 	@Column(name="modified_at")
-	private String modifiedAt;
+	private Timestamp modifiedAt;
 	@Column(name="deleted_at")
-	private String deletedAt;
+	private Timestamp deletedAt;
 	@Column(name="is_delete")
 	private int isDelete;
 	public int getId() {
@@ -44,16 +44,16 @@ public class Department {
 	public void setCreatedAt(Timestamp createdAt) {
 		this.createdAt = createdAt;
 	}
-	public String getModifiedAt() {
+	public Timestamp getModifiedAt() {
 		return modifiedAt;
 	}
-	public void setModifiedAt(String modifiedAt) {
+	public void setModifiedAt(Timestamp modifiedAt) {
 		this.modifiedAt = modifiedAt;
 	}
-	public String getDeletedAt() {
+	public Timestamp getDeletedAt() {
 		return deletedAt;
 	}
-	public void setDeletedAt(String deletedAt) {
+	public void setDeletedAt(Timestamp deletedAt) {
 		this.deletedAt = deletedAt;
 	}
 	public int getIsDelete() {
