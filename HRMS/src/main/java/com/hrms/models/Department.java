@@ -28,8 +28,7 @@ public class Department {
 	private Timestamp deletedAt;
 	@Column(name="is_delete")
 	private int isDelete;
-	@OneToMany(mappedBy="	")
-	@Column(name="designations")
+	@OneToMany(mappedBy="department")
 	private List<Designation> designations;
 	
 	public List<Designation> getDesignations() {
@@ -77,7 +76,7 @@ public class Department {
 	@Override
 	public String toString() {
 		return "Department [id=" + id + ", name=" + name + ", createdAt=" + createdAt + ", modifiedAt=" + modifiedAt
-				+ ", deletedAt=" + deletedAt + ", isDelete=" + isDelete + ", designations=" + designations + "]";
+				+ ", deletedAt=" + deletedAt + ", isDelete=" + isDelete + "]";
 	}
 	
 }
