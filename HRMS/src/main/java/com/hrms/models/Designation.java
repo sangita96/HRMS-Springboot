@@ -1,25 +1,21 @@
 package com.hrms.models;
 
 import java.sql.Timestamp;
-import java.util.List;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-@Entity
-@Table(name="department")
-public class Department {
+public class Designation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="department_id")
+	@Column(name="designation_id")
 	private	int id;
-	@Column(name="department_name")
-	private String name;
+	@Column(name="designation_name")
+	private String designationName;
 	@Column(name="created_at")
 	private Timestamp createdAt;
 	@Column(name="modified_at")
@@ -28,27 +24,21 @@ public class Department {
 	private Timestamp deletedAt;
 	@Column(name="is_delete")
 	private int isDelete;
-	@OneToMany(mappedBy="	")
-	@Column(name="designations")
-	private List<Designation> designations;
-	
-	public List<Designation> getDesignations() {
-		return designations;
-	}
-	public void setDesignations(List<Designation> designations) {
-		this.designations = designations;
-	}
+    @ManyToOne
+	@JoinColumn(name="department_id", nullable=false)
+	@Column(name="department_id")
+	private Department department;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getDesignationName() {
+		return designationName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setDesignationName(String designationName) {
+		this.designationName = designationName;
 	}
 	public Timestamp getCreatedAt() {
 		return createdAt;
@@ -74,10 +64,18 @@ public class Department {
 	public void setIsDelete(int isDelete) {
 		this.isDelete = isDelete;
 	}
+	
+	public Department getDepartment() {
+		return department;
+	}
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 	@Override
 	public String toString() {
-		return "Department [id=" + id + ", name=" + name + ", createdAt=" + createdAt + ", modifiedAt=" + modifiedAt
-				+ ", deletedAt=" + deletedAt + ", isDelete=" + isDelete + ", designations=" + designations + "]";
+		return "Designation [id=" + id + ", designationName=" + designationName + ", createdAt=" + createdAt
+				+ ", modifiedAt=" + modifiedAt + ", deletedAt=" + deletedAt + ", isDelete=" + isDelete + ", department="
+				+ department + "]";
 	}
 	
 }
