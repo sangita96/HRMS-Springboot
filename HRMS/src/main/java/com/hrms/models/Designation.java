@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 public class Designation {
 	@Id
@@ -27,7 +29,7 @@ public class Designation {
 	@Column(name="is_delete")
 	private int isDelete;
     @ManyToOne
-	@JoinColumn(name="department_id", nullable=false)
+	@JoinColumn(name="department_id")
 	private Department department;
 	public int getId() {
 		return id;

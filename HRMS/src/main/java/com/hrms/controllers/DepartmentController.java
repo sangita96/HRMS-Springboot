@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hrms.models.Department;
@@ -21,7 +22,7 @@ public class DepartmentController {
 	DepartmentService departmentService;
 	
 	@PostMapping("/addDepartment")
-	public Department addDepartment(Department department)
+	public Department addDepartment(@RequestBody Department department)
 	{
 		return departmentService.addDepartment(department);
 		

@@ -28,7 +28,7 @@ public class Department {
 	private Timestamp deletedAt;
 	@Column(name="is_delete")
 	private int isDelete;
-	@OneToMany(mappedBy="department")
+	/*@OneToMany(mappedBy="department")
 	private List<Designation> designations;
 	
 	public List<Designation> getDesignations() {
@@ -36,7 +36,7 @@ public class Department {
 	}
 	public void setDesignations(List<Designation> designations) {
 		this.designations = designations;
-	}
+	}*/
 	public int getId() {
 		return id;
 	}
