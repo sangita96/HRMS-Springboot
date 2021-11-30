@@ -46,7 +46,7 @@ public class DepartmentController {
 		return departmentService.deleteDepartment(id);
 	}
 	
-	/*Delete Department*/
+	/*Update Department*/
 	@PutMapping("/updateDepartment")
 	public Department updateDepartment(Department department) {
 		return departmentService.updateDepartment(department);
